@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day Trading Academy</title>
+  <style>
+    @import url("https://unpkg.com/@picocss/pico@1.*/css/pico.min.css");
+    :root {
+      --primary-color: #f57c00;
+      --secondary-color: #f9a825;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: var(--primary-color);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    nav a {
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    nav a:hover {
+      background-color: var(--secondary-color);
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .quiz-container {
+      background-color: #fafafa;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .chart-container {
+      width: 100%;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Day Trading Academy</h1>
+      <p>Your journey to financial independence starts here.</p>
+    </header>
+    <nav>
+      <a href="#courses">Courses</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#quiz">Quiz</a>
+      <a href="#progress">Progress</a>
+      <a href="#certificate">Certificate</a>
+    </nav>
+    <section id="courses">
+      <h2>Courses</h2>
+      <div id="course-list"></div>
+    </section>
+    <section id="lessons">
+      <h2>Lessons</h2>
+      <div id="lesson-list"></div>
+    </section>
+    <section id="quiz">
+      <h2>Quiz</h2>
+      <div class="quiz-container" id="quiz-container"></div>
+    </section>
+    <section id="progress">
+      <h2>Progress</h2>
+      <canvas id="progress-chart"></canvas>
+    </section>
+    <section id="certificate">
+      <h2>Certificate</h2>
+      <p id="certificate-status">Complete the course to earn your certificate.</p>
+    </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Welcome to Day Trading Academy! Our mission is to guide you through the
+        basics of day trading with an easy-to-understand curriculum. Whether you
+        are a complete beginner or have some trading experience, our platform
+        offers courses, lessons, quizzes, and a certificate to help you master
+        day trading.
+      </p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Have any questions? Reach out to us at
+        <a href="mailto:support@daytradingacademy.com">support@daytradingacademy.com</a>.
+      </p>
+    </section>
+    <footer>
+      <p>&copy; 2023 Day Trading Academy. All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
