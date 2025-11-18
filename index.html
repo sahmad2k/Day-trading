@@ -110,6 +110,27 @@
         day trading.
       </p>
     </section>
+    <section id="ml-project">
+      <h2>Machine Learning Project &mdash; Predicting Short Opportunities</h2>
+      <p>
+        Curious about how data science can complement education? Explore the
+        accompanying Python project that downloads real market data, engineers
+        momentum/volatility features, and trains a Random Forest classifier to
+        flag potential short setups (educational use only!).
+      </p>
+      <ol>
+        <li>Install dependencies: <code>pip install -r requirements.txt</code> or run <code>pip install yfinance pandas numpy scikit-learn matplotlib tqdm</code>.</li>
+        <li>Run the pipeline with defaults:<br /><code>python predict_short_opportunities.py</code></li>
+        <li>
+          Customize tickers/dates:<br /><code>python predict_short_opportunities.py --tickers AAPL MSFT NVDA --start 2018-01-01 --end 2024-01-01</code>
+        </li>
+      </ol>
+      <p>
+        The script prints cross-validation metrics and saves a feature
+        importance chart to <code>outputs/feature_importance.png</code> so you
+        can visualize which indicators mattered most.
+      </p>
+    </section>
     <section id="contact">
       <h2>Contact</h2>
       <p>
