@@ -398,11 +398,41 @@ navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     const sectionId = link.getAttribute("href").substring(1);
-    state.view = sectionId;
-    if (sectionId === "courses") {
-      state.view = "dashboard";
+
+    let targetView;
+    switch (sectionId) {
+      case "courses":
+        targetView = "dashboard";
+        break;
+      case "lessons":
+        if (state.currentCourse) {
+          targetView = state.currentLesson ? "lesson" : "course";
+        } else {
+          targetView = "dashboard";
+        }
+        break;
+      case "quiz":
+        targetView = state.currentCourse ? "quiz" : "dashboard";
+        break;
+      case "progress":
+        targetView = "dashboard";
+        break;
+      case "certificate":
+        targetView = "certificate";
+        break;
+      default:
+        targetView = sectionId;
     }
+
+    state.view = targetView;
     render();
+
+    const scrollTargetId =
+      sectionId === "courses" ? "courses" : sectionId === "progress" ? "progress" : sectionId;
+    const scrollTarget = document.getElementById(scrollTargetId);
+    if (scrollTarget && scrollTarget.style.display !== "none") {
+      scrollTarget.scrollIntoView({ behavior: "smooth" });
+    }
   });
 });
 
